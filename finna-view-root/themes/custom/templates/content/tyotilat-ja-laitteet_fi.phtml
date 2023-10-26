@@ -1,0 +1,34 @@
+<? $this->headTitle($this->translate('Työtilat ja laitteet')); $this->content()->setHeading($this->translate('Työtilat ja laitteet'));?>
+
+<div class="row">
+   <div class="col-sm-3 sidebar">
+     <div class="content-navigation-menu">
+     </div>
+   </div>
+   <div class="col-sm-9">
+     <div id="tulostaminen" class="content-section">
+        <h2>Tulostaminen kirjastossa</h2>   
+        <p>Proin eu mi ex. Maecenas suscipit vulputate mauris, eget iaculis neque consectetur ut. Duis eu facilisis leo. Aenean velit augue, 
+        egestas non eros id, vehicula consequat eros. Ut rhoncus ipsum id nibh consectetur, ac cursus nulla faucibus. Ut non fringilla eros. 
+        Fusce tempor eget ipsum sit amet fringilla. Morbi vehicula ligula id justo tempus blandit.</p>
+        <p>Lue <a href="<?=$this->url('content-page', ['page' => 'tulostaminen-ja-asiakastietokoneet'])?>">kaupunkikohtaiset tulostusohjeet</a></p>
+      </div>
+     <div id="asiakastietokoneet" class="content-section">
+        <h2>Asiakastietokoneet</h2>
+        <p>Asiakastietokoneilla voit surffailla netissä. Duis eu facilisis leo. Aenean velit augue, egestas non eros id, vehicula consequat eros. 
+        Ut rhoncus ipsum id nibh consectetur, ac cursus nulla faucibus.</p>
+        <p>Vantaalla ja Espoossa asiakastietokoneet ovat käytössä ilman ajanvarausta. Helsingin kirjastojen asiakastietokoneisiin täytyy varata aika.</p>
+        <p>Lue <a href="<?=$this->url('content-page', ['page' => 'tulostaminen-ja-asiakastietokoneet'])?>">asiakastietokoneiden käyttöohjeet</a></p>
+      </div>
+      <div id="tyotilat" class="content-section">
+        <h2>Varaa työ- tai kokoustila</h2>
+        <p>Lorem ipsum</p>
+        <a href="/Content/tyoskentele-ja-viihdy#tyotilat">työtilat</a>
+      </div>
+      <div id="laitteet" class="content-section">
+        <h2>Lainaa laitteita kirjastosta</h2>
+        <p>Lainaa soittimia ja muita laitteita kirjastosta</p>
+        <p><a href="https://helmet.finna.fi/Search/Results?lookfor=&type=AllFields&filter%5B%5D=%7Eformat%3A%220%2FPhysicalObject%2F%22&limit=50&sort=relevance%2Cid+asc">Helmet-kirjastojen esinehaku</a></p>
+      </div>
+   </div>
+</div>

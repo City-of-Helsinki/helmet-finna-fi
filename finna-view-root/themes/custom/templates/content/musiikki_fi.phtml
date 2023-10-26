@@ -1,0 +1,55 @@
+<? $this->headTitle($this->translate('Musiikki')); $this->content()->setHeading($this->translate('Musiikki'));?>
+<h2>Opi soittamaan</h2>
+<p>Rockway-verkkokurssien avulla voit opiskella soittoa, laulua ja äänittämistä olit sitten aloittelija tai jo pidemmälle edistynyt soittaja. Tarjolla on 69 videokurssia eri 
+aihepiireistä, kitaransoitosta laulutekniikkaan. Käytössäsi ovat myös metronomi ja viritin sekä mahdollisuus äänittää itseäsi. Kaikki kurssit ovat suomenkielisiä.</p>
+<p>Lainaa ja varaa kursseja kirjautumalla Helmetin Rockway-kokoelmaan kirjastokorttisi numerolla ja PIN-koodilla.</p>
+<p><a href="https://kirjastot.rockway.fi/helmet/home">Siirry Rockway-sivustolle</a></p>
+<div class="row">
+    <h2>Nauti musiikista</h2>
+    <h3>Musiikkia verkossa</h3>
+    <div class="col-sm-4">
+        <div class="infobox">
+            <h4>Naxos Music Library World - musiikkia yli 150 maasta</h4>
+            <p>Naxos Music Library Worldin kokoelmassa on Kokoelmassa on yli 100 000 kappaletta yli 32 000 artistilta, ja tarjontaa täydennetään jatkuvasti. Palvelu sisältää muun muassa 
+            Smithsonian-instituutin oman Smithsonian Folkways -levy-yhtiön kaikki levyt.</p>
+            <p>Kirjaudu palveluun Helmet-kirjastokortin takaa löytyvällä numerolla ilman välilyöntejä.</p>
+            <p><a href="https://helsinkilib.naxosmusiclibrary.com/World/">Kirjaudu Naxos Music Library Worldiin</a></p>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="infobox">
+            <h4>Jazz-musiikkia Naxos Music Library Jazz-verkkopalvelussa</h4>
+            <p>Kirjaudu palveluun Helmet-kirjastokorttisi numerolla. Syötä numero ilman välilyöntejä ja klikkaa Login-painiketta.</p>
+            <p><a href="http://helsinkilib.naxosmusiclibrary.com/jazz/page.library_cardno.asp">Kirjaudu Naxos Music Library Worldiin</a></p>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="infobox">
+            <h4>Katso konsertteja, oopperoita ja baletteja Medici.tv:n kautta</h4>
+            <p>Medici.tv sisältää yli 3 000 videota konserteista, oopperoista ja baleteista sekä dokumentteja ja mestarikursseja. Musiikki on pääosin klassista, mutta mukana on jazziakin.</p>
+            <p>Kirjaudu palveluun Helmet-kirjastokorttisi numerolla.</p>
+            <p><a href="https://connect.liblynx.com/wayf/1d7140e39247988fe71b4333a992f0ed">Kirjaudu Medici.tv:n sivulla</a></p>
+        </div>
+    </div>
+</div>
+
+<?= $this->linkedEventsTabs(['tabs' => [
+    [
+        'title' => 'kaikki'
+    ],
+  ],
+  'searchTools' => 'show',
+  'limit' => 6,
+]); ?>
+<h2>Lainattavat soittimet ja musiikkihuoneet</h2>
+<p>Laulattaako? Haluatko muusikoksi? Helmet-kirjasto tarjoaa laajan valikoiman palveluja musiikin harrastajille ja ammattilaisille. Soittotiloissa voit harjoitella rauhassa ja 
+studioissa voit äänittää tuotoksesi muidenkin nautittavaksi. Kun soitto ahkeran harjoittelun jälkeen kulkee mallikkaasti, tartu mikkiin ja tuo bändisi kirjaston lavalle.</p>
+<p><a href="https://helmet.finna-pre.fi/Search/Results?lookfor=&type=AllFields&filter%5B%5D=%7Eformat%3A%220%2FPhysicalObject%2F%22&filter%5B%5D=%7Etopic_facet%3A%22soittimet%22&limit=50&sort=relevance%2Cid+asc">
+Kokeile soitinhakua Helmetissä</a></p>
+<p>Soittohuoneet ja musiikkistudiot voit varata Timmistä ja Varaamosta</p>
+<ul class="list-bullets">
+  <li><a href="https://varaamo.espoo.fi/" target="_blank" aria-label="Varaamo Espoo. Linkki aukeaa uudessa ikkunassa.">Varaamo Espoo</a></li>
+  <li><a href="https://varaamo.hel.fi/" target="_blank" aria-label="Varaamo Helsinki. Linkki aukeaa uudessa ikkunassa.">Varaamo Helsinki</a></li>
+  <li><a href="https://asp3.timmi.fi/WebTimmi/index_v2.html#/826" target="_blank" aria-label="Timmi 360 Vantaa. Linkki aukeaa uudessa ikkunassa.">Timmi 360 Vantaa</a></li>
+</ul>
+

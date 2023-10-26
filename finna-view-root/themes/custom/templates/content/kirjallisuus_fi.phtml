@@ -1,0 +1,12 @@
+<? $this->headTitle($this->translate('Kirjallisuus')); $this->content()->setHeading($this->translate('Kirjallisuus'));?>
+<?= $this->feed('uutuuskirjat'); ?>
+
+<?= $this->linkedEventsTabs(['tabs' => [
+    [
+        'title' => 'Kirjallisuus',
+        'params' => ['keyword' => 'pori:topic:literature']
+    ],
+  ],
+  'searchTools' => 'show',
+  'limit' => 9,
+]); ?>

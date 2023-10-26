@@ -1,0 +1,62 @@
+<? $this->headTitle($this->translate('Lapset')); $this->content()->setHeading($this->translate('Lapset'));?>
+<div class="row">
+  <div class="col-sm-8">
+      <p>Tervetuloa lasten kirjastoon
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+      culpa qui officia deserunt mollit anim id est laborum."</p></div>
+  <div class="col-sm-4">
+      <img src="/themes/custom/images/lapset-nosto.jpg">
+  </div>
+</div>
+
+<?= $this->feed('Lapset'); ?>
+
+<div class="row">
+    <div class="col-md-6">
+      <div class="infobox">
+          <h2>Lukudiplomit</h2>
+          <p>Tuntuuko sinusta, että lukuharrastukseen olisi mukava saada kannustusta, jonkinlainen pieni porkkana? Etkö aina keksi, mitä lukisit? 
+          Oletko valmis tutustumaan monenlaisiin kirjoihin? Jos näin on, kirjasto suosittelee sinulle lukudiplomin suorittamista.</p>
+          <p><a href="/Content/lukudiplomi">Lue lisää lukudiplomista</a></p>
+      </div>    
+    </div>
+    
+    <div class="col-md-6">
+      <div class="infobox">
+          <h2>Lukuvalmentaja Junior</h2>
+          <p>Haluaisitko innostua lukemisesta? Onko sinun vaikea löytää kiinnostavia kirjoja? Tai oletko yksinkertaisesti lukenut jo ihan kaiken ja 
+          kaipaat uusia tarinoita?</p>
+          <p>Niin tai näin, olet tervetullut Lukuvalmentaja Juniorin vastaanotolle! Lukuvalmentaja tekee parhaansa, jotta juuri sinulle sopivat 
+          kirjat löytyisivät. Palvelu on tarkoitettu kaikille lasten- ja nuortenkirjallisuudesta kiinnostuneille – lapsille, nuorille, vanhemmille 
+          ja opettajille. Palvelu on ilmainen.</p>
+          <p><a href="/Content/lukuvalmentaja-junior">Lue lisää lukuvalmentaja juniorista</a></p>
+      </div>
+    </div>
+</div>
+
+
+<div class="col-bg-12">
+    <div class="infobox">
+        <h2>Päiväkoti- ja kouluyhteistyö</h2>
+        <p>Varhaiskasvatuksen ja esiopetuksen ryhmät ovat tervetulleita kirjastoon lukemaan ja lainaamaan sekä osallistumaan kirjastossa 
+        järjestettäviin esityksiin ja tapahtumiin. Tapahtumiin ilmoittaudutaan pääsääntöisesti Kultus.fi -sivuston kautta. Ryhmille voidaan 
+        järjestää myös omia räätälöityjä kirjastovierailuja ja etätuokioita. Lisätietoa kirjaston palveluista ryhmille voi tiedustella oman 
+        lähikirjastosi päiväkotiyhteyshenkilöltä.</p>
+        <p><a href="/Content/helsinki-varhaiskasvatus-ja-esiopetus">Lue lisää päiväkoti- ja kouluyhteistyöstä Helsingissä</a></p>
+    </div>
+</div>
+
+<h2>Tapahtumia lapsille</h2>
+
+<?= $this->linkedEventsTabs(['tabs' => [
+    [
+        'title' => 'kaikki'
+    ],
+  ],
+  'searchTools' => 'show',
+  'limit' => 6,
+]); ?>
+
+<h2>Artikkelit</h2>
+<?= $this->feed('lapset-wp'); ?>
