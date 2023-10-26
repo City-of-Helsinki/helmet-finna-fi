@@ -1,0 +1,65 @@
+<? $this->headTitle($this->translate('Anskaffningsförslag')); $this->content()->setHeading($this->translate('Anskaffningsförslag'));?>
+<p>Vi tar gärna emot anskaffningsförslag via nätet. Du kan också berätta om dina anskaffningsönskemål för personalen. 
+Tyvärr kan vi inte genomföra alla önskemål, men tillsammans kan vi se till att bibliotekets samlingar är så omfattande som möjligt.</p>
+
+<form action="https://app.helmet-kirjasto.fi/forms/index.php?site=hankintaehdotus&amp;lang=sv" method="post">
+	<div class="form-group">
+	<fieldset>
+	    <legend>Välj bibliotek för ditt önskemål *</legend>
+	        <input type="radio" name="library" id="Espoo" value="Espoo" required="">   <label for="Espoo">Esbo</label> <br>
+	        <input type="radio" name="library" id="Helsinki" value="Helsinki" required="">   <label for="Helsinki">Helsingfors</label> <br>
+	        <input type="radio" name="library" id="Kauniainen" value="Kauniainen" required="">   <label for="Kauniainen">Grankulla</label> <br>
+	        <input type="radio" name="library" id="Vantaa" value="Vantaa" required="">   <label for="Vantaa">Vanda</label> <br>
+	        <input type="radio" name="library" id="Elib" value="Elib" required="">   <label for="Elib">E-Lib</label> <br>
+	</fieldset>
+	</div>
+	
+	<div class="form-group">
+	    <label for="author" class="control-label">Författare *
+	    <input type="text" class="form-control" id="author" name="author" value="" required="">
+	    </label>
+	</div>
+	
+	<div class="form-group">
+	    <label for="title" class="control-label">Titel *
+	    <input type="text" class="form-control" id="title" name="title" value="" required="">
+	    </label>
+	</div>
+	
+	<div class="form-group">
+	    <label for="type" class="control-label">Materialtyp (t.ex. bok, CD, DVD, tidskrift osv) *
+	    <input type="text" class="form-control" id="type" name="type" value="" required="">
+	    </label>
+	</div>
+	
+	<div class="form-group">
+	    <label for="misc" class="control-label">Andra uppgifter (t.ex. förlag, språk, ISBN, utgivningsår)
+	    <input type="text" class="form-control" id="misc" name="misc" value="">
+	    </label>
+	</div>
+	
+	<div class="form-group">
+	    <label for="email" class="control-label">Din e-postadress för eventuell kontakt
+	    <input type="text" class="form-control" id="email" name="email" value="">
+	    </label>
+	</div>
+	
+	<div class="form-group">
+	<label for="motivation" class="control-label">Motivering
+	<textarea class="form-control" style="max-width: 100%;" id="motivation" name="motivation" rows="5" cols="40"></textarea>
+	</label>
+	</div>
+	
+	<div class="form-group">
+	<label for="info_source" class="control-label">Uppgifterna är tagna från
+	<textarea class="form-control" style="max-width: 100%;" id="info_source" name="info_source" rows="5" cols="40"></textarea>
+	</label>
+	</div>
+	
+	<input type="hidden" name="lang" value="sv">
+	
+	<p><label>Fält markerade med * är obligatoriska.<br>
+	<input type="submit" class="btn btn-primary" name="submit" value="Skicka">
+	</label></p>
+	
+</form>

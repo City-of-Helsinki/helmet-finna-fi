@@ -1,0 +1,49 @@
+<!-- START of: finna - search/advanced/map.phtml -->
+<? /*php
+$this->jsTranslations()->addStrings(
+    [
+        'radiusPrefix' => 'Radius',
+        'circleCaption' => 'Select Area',
+        'clearCaption' => 'Clear Selections',
+        'removeCaption' => 'Clear',
+        'map_zoom_in' => 'map_zoom_in',
+        'map_zoom_out' => 'map_zoom_out',
+    ]
+);
+  $items = [];
+  if ($saved && ($filters = $saved->getParams()->getGeographicFilters($saved->getParams()->getFilterList()))) {
+    foreach ($filters as $filter) {
+      foreach (preg_split('/\s+OR\s+/', $filter) as $item) {
+        $items[] = $item;
+      }
+    }
+  }
+?>
+<div aria-hidden="true" class="search-map-container">
+  <div>
+    <h4><?=$this->transEsc('Geographical Area') ?></h4>
+  </div>
+  <div class="map-container">
+    <fieldset class="well map">
+      <legend class="sr-only"><?=$this->transEsc('Geographical Area') ?></legend>
+      <div class="selection-map-canvas"></div>
+      <div class="information information-geo bg-info"><p class="information-text"><?=$this->transEsc('advanced_search_information_text_map')?></p></div>
+    </fieldset>
+  </div>
+</div>
+
+<?php
+  $jsItems = json_encode($items);
+  $script = <<<JS
+      $(document).ready(function() {
+        var options = {
+          items: $jsItems
+        };
+        finna.advSearch.initMap(options);
+      });
+      JS;
+  echo $this->inlineScript(\Laminas\View\Helper\HeadScript::SCRIPT, $script, 'SET');
+?>
+<!-- END of: finna - search/advanced/map.phtml -->
+
+-->*/

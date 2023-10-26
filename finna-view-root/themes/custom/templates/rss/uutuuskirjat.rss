@@ -1,0 +1,21 @@
+<rss version="2.0">
+
+<channel>
+    <item>
+        <title>Uutuuskirjat</title>
+        <link>https://helmet.finna.fi/Search/Results?filter%5B%5D=first_indexed%3A%22%5BNOW-1MONTHS+TO+NOW%5D%22&filter%5B%5D=%7Eformat%3A%220%2FBook%2F%22&type=AllFields&view=rss</link>
+    </item>
+    <item>
+			<title>Testi</title>
+			<link>https://vaski.finna.fi/Search/Results?sort=main_date_str+desc&filter%5B%5D=%7Eformat%3A%221%2FOther%2FElectronic%2F%22&lookfor=videopelit&type=AllFields&view=rss</link>
+	</item>
+	<item>
+	    <title>testi2</title>
+	    <link>https://helmet.finna-pre.fi/List/396838?sort=id+desc&filter%5B%5D=lists%3A%22396838%22&view=rss</link>
+	</item>
+ 
+
+</channel>
+
+</rss>
+

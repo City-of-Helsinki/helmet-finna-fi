@@ -1,0 +1,192 @@
+body,
+h1,
+h2,
+h4,
+h5,
+h6,
+a,
+li {
+  font-family: "Open Sans", sans-serif;
+}
+/*Hakupalkin rajaus*/
+.navbar-form,
+.searchForm {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+}
+/*Hakupalkin painike*/
+.navbar-form .btn[type="submit"],
+.searchForm .btn[type="submit"] {
+  border-radius: 0px 5px 5px 0px;
+  background: #F84F00;
+}
+.navbar-form .btn[type="submit"]:hover,
+.searchForm .btn[type="submit"]:hover {
+  border-radius: 0px 5px 5px 0px;
+  background: #DB4600;
+}
+/*Hakupalkin painikkeen kuvake*/
+.navbar-form .btn[type="submit"] i,
+.searchForm .btn[type="submit"] i {
+  color: #FFFFFF;
+}
+/*Kysymysmerkki jossa ohjeet hakuun*/
+.searchbox .searchbox-home .tooltip-button.tooltip-search-local .search-help-icon {
+  color: #DB4600;
+}
+/*Tarkennettu hakupainike*/
+.searchbox .searchbox-home .btn.btn-link:hover {
+  background-color: #D8D9DA;
+}
+/*Palaute painike*/
+.floating-feedback-btn {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666666;
+}
+.floating-feedback-btn:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666666;
+}
+.main.template-dir-feedcontent.template-name-content .finna-main-header,
+.main.template-dir-content.template-name-content .finna-main-header {
+  margin-bottom: 0;
+}
+.btn {
+  padding: 0.3em 0.5em;
+  margin: 0.2em;
+}
+/*Kirjautumispainikket*/
+.login-btn {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #F84F00;
+  letter-spacing: 0.05em;
+  background-color: #FFFFFF;
+  color: #222;
+}
+.login-btn:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #222222;
+  background-color: #FFFFFF;
+  letter-spacing: 0.05em;
+  color: #222;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  border-color: #000;
+}
+.btn-uppercase {
+  font-weight: 700;
+}
+.login-icon {
+  color: #F84F00;
+}
+.login-btn:hover .login-icon {
+  color: #222222;
+}
+/* Ota yhteyttä -painike kirjasivulla */
+.feedback-record {
+  background-color: #F0F2F3;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666;
+}
+.feedback-record:hover {
+  background-color: #D8D9DA;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666;
+}
+/* Etusivun teemanostot */
+.finnafi-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid #D8D9DA;
+  border-radius: 0.7em;
+  margin: 1em;
+  background-color: #F0F2F3;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  height: 30em;
+}
+.finnafi-card h2 {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+.theme-card-title {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  width: 100%;
+  vertical-align: middle;
+}
+.finnafi-card p {
+  padding: 0.7em 0.7em 0 0.7em;
+}
+.finnafi-card .btn {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: auto;
+  align-self: center;
+}
+.finnafi-card img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+.finnafi-card a {
+  position: absolute;
+  bottom: 30px;
+}
+.finnafi-card-container {
+  padding: 8px 16px;
+  color: black;
+}
+#nosto-finnakortit {
+  padding: 2em 0 2em 0;
+}
+.infobox {
+  border-style: solid;
+  border-color: #F84F00;
+  border-width: 1px;
+  border-radius: 0.7em;
+}
+.infobox .btn {
+  background-color: #FFF;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 0.2em;
+  border-color: #F84F00;
+  color: #000;
+}
+.infobox a.btn-primary {
+  color: #000;
+}
+.infobox a.btn-primary i {
+  color: #000;
+}
+/* Mobiilissa valikko muuttuu X:säksi valikon ollessa auki ja viivoiksi valikon ollessa kiinni */
+.navbar-toggle .fa-bars {
+  display: none;
+}
+.navbar-toggle .fa-times {
+  display: block;
+}
+.navbar-toggle.collapsed .fa-bars {
+  display: block;
+}
+.navbar-toggle.collapsed .fa-times {
+  display: none;
+}
+/* Piilottaa varausnäytöllä "Kommentti" lausekkeen */
+.hold-form .hold-comment label {
+  display: none;
+}

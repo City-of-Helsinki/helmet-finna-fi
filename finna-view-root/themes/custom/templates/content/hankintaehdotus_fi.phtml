@@ -1,0 +1,62 @@
+<? $this->headTitle($this->translate('Hankintaehdotus')); $this->content()->setHeading($this->translate('Hankintaehdotus'));?>
+<p>Otamme mielellämme vastaan hankintaehdotuksia verkossa. Voit myös kertoa hankintatoiveesi kirjaston henkilökunnalle. Kaikkia hankintaehdotuksia emme voi toteuttaa. 
+Yhdessä voimme kuitenkin huolehtia siitä, että kirjaston kokoelma on mahdollisimman kattava. Ennen kuin teet ehdotuksen, tarkista Helmet-hausta, onko toivomasi teos jo jossakin kirjastossa. 
+Huomaa, että teoksesta riippuen hankintaprosessi saattaa kestää kuukausia.</p>
+
+<p>DVD voidaan hankkia kirjastoon vain, jos taho, joka hallitsee DVD:n tekijänoikeudet, on myöntänyt sille kirjastojen tarvitsemat lainausoikeudet.</p>
+<a href="<?=$this->url('acquisition-request-form', ['id' => 'hankintaehdotus'])?>">Tee hankintaehdotus!</a>
+
+<form action="https://app.helmet-kirjasto.fi/forms/index.php?site=hankintaehdotus&amp;lang=fi" method="post">
+	<div class="form-group">
+	<fieldset>
+	    <legend>Valitse kirjasto, jolle haluat toiveesi osoittaa *</legend>
+	        <input type="radio" name="library" id="Espoo" value="Espoo" required="">   <label for="Espoo">Espoo</label> <br>
+	        <input type="radio" name="library" id="Helsinki" value="Helsinki" required="">   <label for="Helsinki">Helsinki</label> <br>
+	        <input type="radio" name="library" id="Kauniainen" value="Kauniainen" required="">   <label for="Kauniainen">Kauniainen</label> <br>
+	        <input type="radio" name="library" id="Vantaa" value="Vantaa" required="">   <label for="Vantaa">Vantaa</label> <br>
+	        <input type="radio" name="library" id="Elib" value="Elib" required="">   <label for="Elib">E-kirjasto</label> <br>
+	</fieldset>
+	</div>
+	<div class="form-group">
+	    <label for="author" class="control-label">Tekijä *
+	        <input type="text" class="form-control" id="author" name="author" value="" required="">
+	    </label>
+	</div>
+	<div class="form-group">
+	    <label for="title" class="control-label">Teoksen nimi *
+	        <input type="text" class="form-control" id="title" name="title" value="" required="">
+	    </label>
+	</div>
+	<div class="form-group">
+	    <label for="type" class="control-label">Aineistolaji (esim. kirja, CD, DVD, lehti jne.) *
+	        <input type="text" class="form-control" id="type" name="type" value="" required="">
+	    </label>
+	</div>
+	<div class="form-group">
+	    <label for="misc" class="control-label">Muita tietoja (esim. kustantaja, julkaisuvuosi, kieli, ISBN-numero)
+	        <input type="text" class="form-control" id="misc" name="misc" value="">
+	    </label>
+	</div>
+	<div class="form-group">
+	    <label for="email" class="control-label">Sähköpostiosoitteesi mahdollista yhteydenottoa varten:
+	        <input type="text" class="form-control" id="email" name="email" value="">
+	    </label>
+	</div>
+	<div class="form-group">
+	<label for="motivation" class="control-label">Perustelut hankintaehdotuksellesi 
+	<textarea class="form-control" style="max-width: 100%;" id="motivation" name="motivation" rows="5" cols="40"></textarea>
+	</label>
+	</div>
+	
+	<div class="form-group">
+	<label for="info_source" class="control-label">Mistä sait tiedon kyseisestä teoksesta?
+	<textarea class="form-control" style="max-width: 100%;" id="info_source" name="info_source" rows="5" cols="40"></textarea>
+	</label>
+	</div>
+	
+	<input type="hidden" name="lang" value="fi">
+	
+	<p><label>Täytä vähintään tähdellä (*) merkityt kentät. <br>
+	<input type="submit" class="btn btn-primary" name="submit" value="Lähetä hankintaehdotus">
+	</label></p>
+</form>

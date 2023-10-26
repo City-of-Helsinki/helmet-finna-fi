@@ -1,0 +1,352 @@
+---
+# Listing of configured forms.
+#
+# Configured forms are listed in the top level 'forms' array and can accessed via the URL:
+# /Feedback/Form/<form-id>
+#
+# The main Feedback form (id: FeedbackSite) can be accessed with a shorter URL /Feedback
+#
+# Form supports the following options:
+#
+#   enabled (boolean) Is the form enabled? (default = true)
+#   useCaptcha (boolean) Should the form use Captcha validation? Requires the "feedback"
+#                        option to be turned on in the config.ini [Captcha] form setting.
+#                        (default = true, if Captcha turned on for feedback overall).
+#   title (string) Form title (translation key)
+#   onlyForLoggedUsers (boolean) Require the user to be logged in to see the form
+#                                (default = false)
+#   emailSubject (string) Email subject (translation key). (default = email_subject
+#                         value from config.ini [Feedback] section, or 'VuFind Feedback')
+#                         The subject may contain placeholders (for example %%receiver%%)
+#                         that are replaced with submitted form values.
+#
+#   sendMethod (string) Determines how submitted form data is handled:
+#     email    Form data is sent via email to 'recipient'
+#     database Form data is saved to the database.
+#
+#   recipient (needed only when 'sendMethod' is email)
+#     name (string)  Recipient name (default = recipient_name setting from config.ini
+#                    [Feedback] section)
+#     email (string) Recipient email address (default = recipient_email setting from
+#                    config.ini [Feedback] section)
+#
+#   Multiple recipients can be configured using a list:
+#
+#   recipient:
+#     - name: Recipient 1
+#       email: recipient1@email
+#     - name: Recipient 2
+#       email: recipient2@email
+#
+#   response (string) Reponse after form submit (translation key)
+#
+#   By default, the form renders input fields for sender name and email address with the
+#   following options:
+#      senderInfoRequired (boolean)  Require sender to fill out name and email fields 
+#      senderInfoHelp (string) Info text for sender name/email (translation key)
+#
+#   If needed, the default sender fields can be hidden (in case they are not needed
+#   or a different set of fields is configured in 'fields' list):
+#      hideSenderInfo (boolean) Hide default sender fields (name & email)
+#
+#   help
+#     pre (string)  Help text displayed at the beginning of the form (translation key).
+#     post (string) Help text displayed at the end of the form (translation key)
+#
+#   Help texts may contain HTML-formatting.
+#
+#   fields (array) List of form elements with the following options:
+#
+#     name (string)      Element name
+#     label (string)     Element label (translation key)
+#     required (boolean) Is the element required?
+#     settings (array)   HTML attributes as key-value pairs, for example:
+#       - [class, "custom-css-class another-class"]
+#     type (string)      Element type (text|textarea|email|url|select|radio|checkbox)
+#     help (string)      Element help text (translation key).
+#                        To include HTML formatting, use a translation key ending
+#                        in '_html' here, and define markup in the language files.
+#     
+#     And for checkbox, select and radio elements:
+# 
+#     options (array) List of select values (translation keys)
+#
+#     or for select elements alternatively:
+#
+#     optionGroups (array) List of option groups with keys:
+#       label (string) Group label (translation key)
+#       options (array) List of select values (translation keys)
+#
+#     placeholder (string) Placeholder label (translation key). Used to instruct or force
+#       (when combined with 'required' attribute) the user to make a selection from the
+#       options-list. Only select elements with 'options' are supported.
+#       For text, textarea, email and url elements, a placeholder text can be configured
+#       by adding a HTML-attribute via 'settings', for example:
+#       settings:
+#         - [placeholder, Please select...]
+#
+#-----------------------------------------------------------------------------------
+
+
+forms:
+
+  # Hankintaehdotus
+  AcquisitionRequest:
+    allowLocalOverride: true
+    title: menu_hankint
+    enabled: true
+    #reportUserAgent: true
+    recipient:
+      name: Your Library
+      email: anna-aleksandra.ruohonen@vantaa.fi
+
+    onlyForLoggedUsers: false
+    emailSubject: Hankintaehdotus (%%library%%)
+    response: Kiitos ehdotuksestasi.
+    senderInfoRequired: false 
+    #senderInfoHelp: feedback_info
+    #help:
+    #  pre: feedback_help_pre
+    #  post: feedback_help_post
+
+    fields:
+       - name: library
+         type: select
+         options:
+           - Espoo
+           - Helsinki
+           - Kauniainen
+           - Vantaa
+           - E-kirjasto
+         label: feedback_choose_city
+       - name: author
+         type: text
+         label: Author
+         required: true
+       - name: title
+         type: text
+         label: Title
+         required: true
+       - name: format
+         type: select
+         options:
+           - 0/Book/
+           - 0/Journal/
+           - 1/Sound/CD/
+           - 1/Video/DVD/
+           - 1/Other/Other/
+         label: Format
+       - name: info
+         type: text
+         label: Other information
+         required: false
+       - name: reason
+         type: textarea
+         label: Reason for request
+         required: false
+       - name: email
+         type: email
+         label: Voluntary email address
+         required: false
+          
+  # Record feedback form
+  FeedbackRecord:
+    allowLocalOverride: true
+    title: Send feedback on record
+    enabled: true
+    reportUserAgent: true
+    #sendMethod: "database"
+
+    onlyForLoggedUsers: false
+    emailSubject: "Palautetta Finnasta tietueesta: %%record%%"
+    response: Thank you for your feedback.
+    senderInfoRequired: false
+    senderInfoHelp: feedback_info
+    hideSenderInfo: true
+    help:
+      pre: feedback_record_instructions_html
+
+  # Kaukopalvelu
+  Kaukopalvelu:
+    allowLocalOverride: true
+    title: menu_kaukopalvelu
+    enabled: true
+    #reportUserAgent: true
+    recipient:
+      name: Your Library
+      email: anna-aleksandra.ruohonen@vantaa.fi
+
+    onlyForLoggedUsers: false
+    emailSubject: Hankintaehdotus (%%library%%)
+    response: Kiitos ehdotuksestasi.
+    senderInfoRequired: false 
+    hideSenderInfo: true
+    #senderInfoHelp: feedback_info
+    #help:
+    #  pre: feedback_help_pre
+    #  post: feedback_help_post
+
+    fields:
+       - name: library
+         type: select
+         optionGroups:
+           - label: Espoo
+             options:
+              - Entresse
+              - Haukilahti
+              - Ison Omena
+              - Kalajärvi
+              - Karhusuo
+              - Kauklahti
+              - Laajalahti
+              - Laaksolahti
+              - Lippulaiva
+              - Nöykkiö
+              - Otaniemi
+              - Saunalahti
+              - Sello
+              - Suurpelto
+              - Tapiola
+              - Viherlaakso
+           - label: Helsinki
+             options:
+              - Arabianranta
+              - Etelä-Haaga 
+              - Herttoniemi 
+              - Itäkeskus 
+              - Jakomäki
+              - Jätkäsaari
+              - Kalasatama 
+              - Kallio
+              - Kannelmäki
+              - Kontula
+              - Käpylä
+              - Laajasalo
+              - Lauttasaari
+              - Malmi
+              - Malminkartano
+              - Maunula
+              - Munkkiniemi
+              - Myllypuro
+              - Keskustakirjasto Oodi
+              - Oulunkylä
+              - Paloheinä
+              - Pasila
+              - Pitäjänmäki
+              - Pohjois-Haaga
+              - Puistola
+              - Pukinmäki
+              - Rikhardinkatu
+              - Roihuvuori
+              - Suomenlinna
+              - Suutarila
+              - Tapanila
+              - Tapulikaupunki
+              - Töölö
+              - Vallila
+              - Viikki
+              - Vuosaari
+           - label: Kauniainen
+             options:
+              - Kauniaisten kirjasto
+           - label: Vantaa
+             options:
+              - Hiekkaharju
+              - Kivistö
+              - Koivukylä
+              - Lumo
+              - Länsimäki
+              - Martinlaakso
+              - Myyrmäki
+              - Pointti
+              - Tikkurila
+           - label: E-kirjasto
+             options:
+              - E-kirjasto
+         label: feedback_choose_library
+         required: true
+       - name: Kirjastokortin numero
+         type: text
+         required: true
+         label: Username
+       - name: Nimi
+         type: text
+         required: true
+         label: Author Name
+       - name: Osoite
+         type: text
+         required: true
+         label: Address
+       - name: Postinumero
+         type: text
+         required: true
+         label: Zip
+       - name: Kaupunki
+         type: text
+         required: true
+         label: City
+       - name: Lisätietoja
+         type: text
+         required: false
+         label: lisatietoja
+       - name: Toimitustapa
+         type: radio
+         options:
+          - laina (kirja, mikrojäljenne, dvd tms.)
+          - valokopio
+         required: true
+         label: Toimitustapa     
+       - name: Tekijät
+         type: text
+         required: true
+         label: Authors
+       - name: Teoksen nimi
+         required: false
+         type: text
+         label: hold_sort_title
+       - name: Painos/painovuosi
+         type: text
+         required: false
+         label: Painos/painovuosi
+       - name: Volyymi/numero
+         type: text
+         required: false
+         label: Volyymi/numero
+       - name: ISBN/ISSN-numero
+         type: text
+         required: false
+         label: ISBN/ISSN-numero
+       - name: Artikkelin tekijä
+         type: text
+         required: false
+         label: Artikkelin tekijä
+       - name: Artikkelin nimi
+         type: text
+         required: false
+         label: Artikkelin nimi
+       - name: Sivut
+         type: text
+         required: false
+         label: Sivut
+       - name: Mikrojäljenne (anna myös mahdolliset arkistonumerot)
+         type: text
+         required: false
+         label: Mikrojäljenne (anna myös mahdolliset arkistonumerot)
+       - name: Tarvitaan viimeistään
+         type: text
+         required: false
+         label: Tarvitaan viimeistään
+       - name: Saa tilata
+         type: radio
+         options:
+          - vain kotimaasta / pohjoismaista
+          - muualta ulkomailta
+         required: true
+         label: Saa tilata
+
+       
+
+             
+
+      
+
