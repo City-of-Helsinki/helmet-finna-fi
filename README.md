@@ -43,6 +43,7 @@ The files are manually linked using the Finna File Manager (Tiedostonhallinta).
 
 We hope that Finna will receive support for external content repositories soon as it will make things easier.
 
-## Caveats
+## Caveats or known issues
 
-Note that some VPN solutions might prevent the use of SSH which also blocks Git.
+1. Note that some VPN solutions might prevent the use of SSH which also blocks Git.
+2. Note that ```/local/config/vufind/config.ini``` file cannot be externally linked. 
